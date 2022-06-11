@@ -1,0 +1,29 @@
+***** Rules of the dice game: Left Center Right *****
+
+- To play this game there must be a minimum of 3 players.
+- The players should then be positioned in a circle.
+- Every player will be given a total of 3 chips. 
+- The amount of chip each player has on their turn will determine the number of dice they 
+  have to roll.
+- The First player (Who should have 3 chips) rolls 3 dice.
+- The player must follow the roll result of each dice they have rolled.
+- Each dice is a 6 sided die with unique sides for this game. The sides and their outcomes 
+  are represented below:
+
+	 "L" = Left: Player must pass one chip to the player on your left.
+	
+	 "C" = Center: Player must pass one chip to the center pot. (No one recieves this chip)
+
+	 "R" = Right: Player must pass one chip to the player on their right.
+
+	 "*" = Dot: Player gets to keep one chip.
+
+- Once the player has finished performing their roll result, the next player on the left 
+  will be the next to play.
+- The next player will now roll the amount of dice depending on how many chips they have. 
+  (Never more than 3 dice are rolled)
+- If a player does not have any chips, they do not roll any dice. However, they are still 
+  in the game. This is because they have the chance of being given chips by other players, 
+  which will allow them to possibly roll on their next turn.
+- Once only one player has any amount of chips and all the other players have zero, the 
+  player with chips still Wins!

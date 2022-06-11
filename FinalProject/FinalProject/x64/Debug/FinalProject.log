@@ -1,0 +1,6 @@
+﻿  GameLoop.cpp
+  PlayGame.cpp
+C:\Users\elphi\source\repos\FinalProject\FinalProject\PlayGame.cpp(50,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\elphi\source\repos\FinalProject\FinalProject\PlayGame.cpp(48,8): warning C4101: 'tempChip': unreferenced local variable
+  Generating Code...
+  FinalProject.vcxproj -> C:\Users\elphi\source\repos\FinalProject\x64\Debug\FinalProject.exe

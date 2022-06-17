@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     Game game;
-    game.RunGame();
+    game.runGame();
 
     return 0;
 }

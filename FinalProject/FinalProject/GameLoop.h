@@ -1,19 +1,14 @@
-#pragma once
-
-#include "MenuOptions.h"
-#include "Player.h"
-#include <string>
 
 class Game
 {
 private:
 
-	void Welcome();
-	void DisplayMenu();
-	void DisplayRules();
+	void welcome();
+	void displayMenu();
+	void displayRules();
 
-	void GetPlayerInput(std::string& playerInput) const;
-	MenuOptions EvaluateInput(std::string& playerInput) const;
+	void getPlayerInput(std::string& playerInput) const;
+	MenuOptions evaluateInput(std::string& playerInput) const;
 
 
 
@@ -22,6 +17,6 @@ private:
 
 public:
 
-	void RunGame();
+	void runGame();
 };
 

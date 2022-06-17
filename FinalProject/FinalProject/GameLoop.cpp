@@ -11,15 +11,23 @@
 using namespace std;
 
 // Welcome Message.
-void Game::Welcome()
+void Game::welcome()
 {
-    cout << "*|*|*|*|* Welcome to Left Center Right: The Dice Game *|*|*|*|*" << endl << endl;
+    //cout << "*|*|*|*|* Welcome to Left Center Right: The Dice Game *|*|*|*|*" << endl << endl;
+
+	cout << "          +-+-+-+-++-+-+-+-+-+-++-+-+-+-+-+-+-+" << endl;
+	cout << "          |L|E|F|T| |C|E|N|T|E|R| |R|I|G|H|T|:|" << endl;
+	cout << "          +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+" << endl;
+	cout << "               |T|h|e| |D|i|c|e| |G|a|m|e|" << endl;
+	cout << "               +-+-+-++-+-+-+-++-+-+-+-+-+" << endl;
+	cout << "" << endl << endl;
+	displayRules();
 }
 
-// Menu Display
-void Game::DisplayMenu()
+// Main Menu Display
+void Game::displayMenu()
 {
-    cout << "** Menu **     " << endl << endl;
+    cout << "\n**** Main Menu ****     " << endl << endl;
     cout << "Please enter a Number of the option you would like to pick." << endl;
     cout << "1: See the Rules of the game." << endl;
     cout << "2: Play Left Center Right" << endl;
@@ -27,16 +35,16 @@ void Game::DisplayMenu()
 }
 
 // Display LeftCenterRight_Rules.txt File.
-void Game::DisplayRules()
+void Game::displayRules()
 {
 	// Reading from file.
 	fstream RuleFile("LeftCenterRight_Rules.txt", ios::in);
 	string line;
 
-	if (RuleFile.is_open())							// Check to make sure file exists.
+	if (RuleFile.is_open())														// Check to make sure file exists.
 	{
 		getline(RuleFile, line);
-		while (RuleFile)							// Loop to display all lines of text document.
+		while (RuleFile)														// Loop to display all lines of text document.
 		{
 			cout << line << endl;
 			getline(RuleFile, line);
@@ -46,18 +54,17 @@ void Game::DisplayRules()
 	{
 		cout << "File not found." << endl;
 	}
-	RuleFile.close();								// Make sure file is closed after use.
-	cout << "\n\nThe file has been displayed and closed.\n";
+	RuleFile.close();															// Make sure file is closed after use.
 }
 
 // Get player input.
-void Game::GetPlayerInput(string& playerInput) const
+void Game::getPlayerInput(string& playerInput) const
 {
     cin >> playerInput;
 }
 
 // Evalue player input
-MenuOptions Game::EvaluateInput(string& playerInput) const
+MenuOptions Game::evaluateInput(string& playerInput) const
 {
     MenuOptions chosenOption = MenuOptions::None;
 
@@ -76,53 +83,44 @@ MenuOptions Game::EvaluateInput(string& playerInput) const
 		cout << "You have selected to Quit" << endl << endl;
 		chosenOption = MenuOptions::Quit;
 	}
-	else
+	else																		// User Input Validation.       
 	{
-		cout << "That is not a Menu option. Please Try Again." << endl << endl;
+		cout << "That is not a Menu option. Please Try Again." << endl << endl; 
 	}
 	return chosenOption;
 }
 
-// Create Players
-
-
-
-
-
-
-void Game::RunGame()
+// Main Game Program
+void Game::runGame()
 {
-    Welcome();
+    welcome();
     
 	bool quitGame = false;
 	while (quitGame == false)
 	{
-		DisplayMenu();
+		displayMenu();
 		
-		string playerInput;
-		GetPlayerInput(playerInput);
+		string playerInput;														// Gets user input for menu selection.
+		getPlayerInput(playerInput);
 
 		// Switch for Menu.
-		switch (EvaluateInput(playerInput))
+		switch (evaluateInput(playerInput))
 		{
 		case MenuOptions::Rules:
-			cout << "Displaying Rules" << endl;
-			DisplayRules();
-			cout << "Press any key to continue..." << endl;			// Pause.
+			displayRules();
+			cout << "Press any key to continue..." << endl;						// Pause.
 			cin.get();
 			cin.ignore();
 			break;
 		case MenuOptions::Play:
 			cout << "Starting Game" << endl;
-			PlayGame play;											// Added PlayGame.h & PlayGame.cpp ** As well as some Player.h changes.
-			play.RunLCR();
+			PlayGame play;											
+			play.runLCR();														// Runs LCR Gameplay.
 			break;
 		case MenuOptions::Quit:
 			quitGame = true;
 			cout << "Thank you for Playing!" << endl;
 			break;
 		}
-
 	}
-
 }

@@ -16,22 +16,22 @@ public:
 	}
 
 	// Setters.
-	void SetName(const string& name)
+	void setName(const string& name)
 	{
 		playerName = name;
 	}
 
-	void SetChipCount(const int& count)
+	void setChipCount(const int& count)
 	{
 		chipCount = count;
 	}
 
 	// Getters.
-	const string GetName() const
+	const string getName() const
 	{
 		return playerName;
 	}
-	const int& GetChipCount() const
+	const int& getChipCount() const
 	{
 		return chipCount;
 	}
